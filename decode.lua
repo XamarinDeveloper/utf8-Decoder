@@ -12,8 +12,8 @@ local function decode(str)
 				str = str:gsub("\\"..b1.."\\"..b2.."\\"..b3, string.char(b1, b2, b3))
 			end
 		elseif tonumber(b1) >= 192 then
-			local three = string.gmatch(str, "[\\]"..b1.."[\\](%d%d%d)")
-			for b2 in three do
+			local two = string.gmatch(str, "[\\]"..b1.."[\\](%d%d%d)")
+			for b2 in two do
 				str = str:gsub("\\"..b1.."\\"..b2, string.char(b1, b2))
 			end
 		end
